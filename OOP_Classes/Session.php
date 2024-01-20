@@ -46,6 +46,10 @@
             unset($_SESSION[$key]);
         }
 
+        public function hasFlash($key){
+            return (isset($_SESSION['flash_messages'][$key])) ;
+        }
+
         public function setFlash($key, $message){
             $_SESSION['flash_messages'][$key] = [
                 'remove' => false,
