@@ -4,7 +4,7 @@
     use Support\Session;
     use Validation\Validator\Validator; 
 
-    ini_set('display_errors', 'on');
+    ini_set('display_errors', 'off');
 
     if(!defined('DS')){
         define('DS', DIRECTORY_SEPARATOR);
