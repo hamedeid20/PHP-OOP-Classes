@@ -1,0 +1,45 @@
+# --------------------------- Example-1 ------------------------------ #
+$array = [
+    'username' => 'hamed',
+    'password' => '1234567890',
+    'phone' => '01120112012'
+];
+var_dump($arr::only($array, ['username', 'phone']));
+# --------------------------- Example-2 ------------------------------ #
+
+$array = [
+        "username" => "Hamed",
+        "email" => "hamed203020@gmail.com",
+        "gender" => "male",
+        "phone" => "01120112362",
+        "info" => [
+            "age" => 30,
+            "address" => [
+                "city" => "Cairo",
+                "country" => "Egypt"
+            ]
+        ]
+    ];
+
+var_dump($arr::flatten($array));
+
+var_dump($arr::set($array, "info.address.city", 'san francisco'));
+
+var_dump($arr::set($array, "info.address.city", null));
+var_dump($arr::unset($array, "info.address.city")); 
+ 
+var_dump($arr::get($array, 'info.address'));
+var_dump($arr::accessible($array));
+var_dump($arr::exists($array, 'username'));
+
+$arr::forget($array, 'info.address.city');
+$arr::forget($array, ['email']);
+$arr::forget($array, ('email'));
+
+var_dump($arr::except($array, 'info.address.city'));
+var_dump($arr::except($array, ('phone')));
+
+var_dump($arr::has($array, 'info'));
+var_dump($arr::first($array));
+var_dump($arr::last($array));
+ 

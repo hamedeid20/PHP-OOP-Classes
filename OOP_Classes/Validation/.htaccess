@@ -1,0 +1,4 @@
+Options -Indexes
+
+# إعادة توجيه المستخدم إلى صفحة الخطأ عند الوصول إلى مجلد بدون فهرس
+ErrorDocument 403 /OOP_CLASSES/Validation/error_404.php
